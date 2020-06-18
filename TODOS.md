@@ -6,10 +6,10 @@
   - [x] Decode pieces, check hash
   - [x] Getter and Setter of Torrent class
   - [x] Include some necessary torrent related methods
-- [ ] ***Make tracker request**
+- [x] Make tracker request
   - [x] Create request messages
-  - [ ] Decode response messages
-- [ ] Connect to peers
+  - [x] Decode response messages
+- [ ] ***Connect to peers**
   - [ ] Make peer states and messages
   - [ ] Make a connection
 - [ ] Make blocks and pieces manager

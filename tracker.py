@@ -1,6 +1,8 @@
 import random
 import string
-from typing import Type
+import ipaddress
+import struct
+from typing import Type, Dict, Optional
 import asyncio
 from aiohttp import ClientSession
 from urllib.parse import urlencode
@@ -8,9 +10,9 @@ from bcoding import bdecode
 from dumper import dump
 from torrent import Torrent
 
-PEER_ID = 'SISTER-' + ''.join(
+PEER_ID = 'SISTER-FAWWIS-' + ''.join(
     random.choice(string.ascii_lowercase + string.digits)
-    for i in range(13)
+    for i in range(6)
 )
 
 MAX_RETRY = 2
@@ -41,22 +43,26 @@ class Tracker():
         self.info_hash = info_hash
         self.size = size
         self.tries = 0
+        self.compact = 1
+        self.event = 'started'
 
-    async def getPeers(self):
-        raw_peers = await self.requestPeers()
-        print(f'---RAW PEERS RESPONSE--- {self.url}:{self.info_hash}:{self.size}')
-        print(raw_peers)
-        # peers = self.unpackPeers()
-        return raw_peers
+    async def getPeers(self) -> Dict:
+        tracker_response = await self.requestPeers()
+        print(f'---TRACKER RESPONSE--- {self.url}:{self.info_hash}:{self.size}')
+        print(tracker_response)
+        if tracker_response:
+            if isinstance(tracker_response['peers'], bytes):
+                tracker_response = self.unpackPeers(tracker_response)
+        return tracker_response
     
-    async def requestPeers(self):
+    async def requestPeers(self) -> Optional[Dict]:
         async with ClientSession() as session:
             try:
                 response = await session.get(self.url + '?' + self.getTrackerParams())
                 response_data = await response.read()
                 peers = bdecode(response_data)
                 return peers
-            except TypeError:
+            except (TypeError, ValueError):
                 print(f'cannot decode response from {self.url}')
                 print(f'response: {response_data}')
             except Exception as e:
@@ -68,11 +74,12 @@ class Tracker():
                     print(f'cannot connect to tracker {self.url}!')
                     return
                 else:
-                    print(f'reconnecting... from tracker {self.url}')
+                    print(f'reconnecting... from tracker {self.url} using compact mode')
+                    self.compact = 1
                     await asyncio.sleep(2)
                     await self.requestPeers()
     
-    def getTrackerParams(self):
+    def getTrackerParams(self) -> str:
         msg = {
             'info_hash': self.info_hash,
             'peer_id': PEER_ID,
@@ -80,13 +87,18 @@ class Tracker():
             'uploaded': 0,
             'downloaded': 0,
             'left': self.size,
-            'compact': 1,
-            'event': 'started'
+            'compact': self.compact,
+            'event': self.event
         }
         return urlencode(msg)
     
-    def unpackPeers(self):
-        pass
+    def unpackPeers(self, raw_response: Dict) -> Dict:
+        new_response = raw_response
+        peers = raw_response['peers']
+        temp = [peers[i:i+6] for i in range(0, len(peers), 6)]
+        new_peers = [{'ip': str(ipaddress.IPv4Address(peer[:4])), 'port': struct.unpack('>H', peer[4:])[0]} for peer in temp]
+        new_response['peers'] = new_peers
+        return new_response
 
 if __name__ == "__main__":
     torrent = Torrent('sintel.torrent')
