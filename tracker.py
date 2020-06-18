@@ -43,7 +43,7 @@ class Tracker():
         self.info_hash = info_hash
         self.size = size
         self.tries = 0
-        self.compact = 1
+        self.compact = 0
         self.event = 'started'
 
     async def getPeers(self) -> Dict:
