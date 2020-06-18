@@ -17,8 +17,8 @@ class Torrent():
     # GETTER
     def getAnnounce(self) -> str:
         return self.metainfo['announce']
-    def getAnnounceList(self) -> Optional[str]:
-        return self.metainfo.get('announce-list')
+    def getAnnounceList(self) -> List:
+        return [self.getAnnounce()] if self.file_mode else self.metainfo.get('announce-list')
     def getCreationDate(self) -> Optional[str]:
         return datetime.fromtimestamp(self.metainfo.get('creation date')) if 'creation date' in self.metainfo else None
     def getCreator(self) -> Optional[str]:
@@ -31,6 +31,7 @@ class Torrent():
             f'Torrent File: {self.torrent_file}\n'
             f'Comment: {self.getComment()}\n'
             f'Created by: {self.getCreator()}\n'
+            f'Pieces: {self.getNumPieces()}'
         )
         return msg
     def getRoot(self) -> str:
@@ -38,13 +39,15 @@ class Torrent():
     def getFiles(self) -> List:
         return self.files
     def getNumPieces(self) -> int:
-        total_length = sum(afile["length"] for afile in self.metainfo["info"]["files"]) if self.file_mode else self.metainfo['info']['length']
+        total_length = self.metainfo['info']['length'] if self.file_mode else sum(afile["length"] for afile in self.metainfo["info"]["files"])
         piece_size = self.metainfo['info']['piece length']
         return math.ceil(total_length/piece_size)
     def getInfoHash(self):
         return self.infoHash
     def getHashPiece(self, idx):
         return self.metainfo['info']['pieces'][idx*20:idx*20+20]
+    def getSize(self) -> int:
+        return self.metainfo['info']['length'] if self.file_mode else sum(afile["length"] for afile in self.metainfo["info"]["files"])
     
     # Construction related methods
     def decode_file(self) -> Dict:
@@ -64,4 +67,7 @@ class Torrent():
 
 if __name__ == "__main__":
     tor = Torrent('sintel.torrent')
-    print(tor.getHashPiece(0))
+    # dump(tor)
+    urls = tor.getAnnounceList()
+    for url in urls:
+        print(url)

@@ -7,7 +7,7 @@
   - [x] Getter and Setter of Torrent class
   - [x] Include some necessary torrent related methods
 - [ ] ***Make tracker request**
-  - [ ] Create request messages
+  - [x] Create request messages
   - [ ] Decode response messages
 - [ ] Connect to peers
   - [ ] Make peer states and messages
