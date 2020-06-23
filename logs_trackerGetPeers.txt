@@ -1,0 +1,192 @@
+<TrackerManager at 1e0d47cf448: <__main__.TrackerManager object at 0x000001E0D47CF448>> 
+  torrent: <Torrent at 1e0d47c8548: <torrent.Torrent object at 0x000001E0D47C8548>>
+    object contents suppressed (instance from different module)
+  trackers_url: <list at 0x1e0d199bcc8>
+    0: ['udp://tracker.leechers-paradise.org:6969']
+    1: ['udp://tracker.coppersurfer.tk:6969']
+    2: ['udp://tracker.opentrackr.org:1337']
+    3: ['udp://explodie.org:6969']
+    4: ['udp://tracker.empire-js.us:1337']
+    5: ['wss://tracker.btorrent.xyz']
+    6: ['wss://tracker.openwebtorrent.com']
+    7: ['wss://tracker.fastcast.nz']
+  trackers: <list at 0x1e0d4767dc8>
+    0: <Tracker at 1e0d47cf648: <__main__.Tracker object at 0x000001E0D47CF648>>
+      url: 'udp://tracker.leechers-paradise.org:6969/announce'
+      info_hash: <str at 0x1e0d47bad50>: "b'\\x08\\xad\\xa5\\xa7\\xa6\\x18:\\xae\\x1e\\t\\xd81\\xdfgH\\xd5f\\tZ\\x10'"
+      size: 129302391
+      tries: 0
+      compact: 0
+      event: 'started'
+    1: <Tracker at 1e0d47cf6c8: <__main__.Tracker object at 0x000001E0D47CF6C8>>
+      url: 'udp://tracker.coppersurfer.tk:6969/announce'
+      info_hash: <str at 0x1e0d47bad50>: "b'\\x08\\xad\\xa5\\xa7\\xa6\\x18:\\xae\\x1e\\t\\xd81\\xdfgH\\xd5f\\tZ\\x10'"
+      size: 129302391
+      tries: 0
+      compact: 0
+      event: 'started'
+    2: <Tracker at 1e0d47cf548: <__main__.Tracker object at 0x000001E0D47CF548>>
+      url: 'udp://tracker.opentrackr.org:1337/announce'
+      info_hash: <str at 0x1e0d47bad50>: "b'\\x08\\xad\\xa5\\xa7\\xa6\\x18:\\xae\\x1e\\t\\xd81\\xdfgH\\xd5f\\tZ\\x10'"
+      size: 129302391
+      tries: 0
+      compact: 0
+      event: 'started'
+    3: <Tracker at 1e0d47cf708: <__main__.Tracker object at 0x000001E0D47CF708>>
+      url: 'udp://explodie.org:6969/announce'
+      info_hash: <str at 0x1e0d47bad50>: "b'\\x08\\xad\\xa5\\xa7\\xa6\\x18:\\xae\\x1e\\t\\xd81\\xdfgH\\xd5f\\tZ\\x10'"
+      size: 129302391
+      tries: 0
+      compact: 0
+      event: 'started'
+    4: <Tracker at 1e0d47cf748: <__main__.Tracker object at 0x000001E0D47CF748>>
+      url: 'udp://tracker.empire-js.us:1337/announce'
+      info_hash: <str at 0x1e0d47bad50>: "b'\\x08\\xad\\xa5\\xa7\\xa6\\x18:\\xae\\x1e\\t\\xd81\\xdfgH\\xd5f\\tZ\\x10'"
+      size: 129302391
+      tries: 0
+      compact: 0
+      event: 'started'
+    5: <Tracker at 1e0d47cf7c8: <__main__.Tracker object at 0x000001E0D47CF7C8>>
+      url: 'wss://tracker.btorrent.xyz/announce'
+      info_hash: <str at 0x1e0d47bad50>: "b'\\x08\\xad\\xa5\\xa7\\xa6\\x18:\\xae\\x1e\\t\\xd81\\xdfgH\\xd5f\\tZ\\x10'"
+      size: 129302391
+      tries: 0
+      compact: 0
+      event: 'started'
+    6: <Tracker at 1e0d47cf808: <__main__.Tracker object at 0x000001E0D47CF808>>
+      url: 'wss://tracker.openwebtorrent.com/announce'
+      info_hash: <str at 0x1e0d47bad50>: "b'\\x08\\xad\\xa5\\xa7\\xa6\\x18:\\xae\\x1e\\t\\xd81\\xdfgH\\xd5f\\tZ\\x10'"
+      size: 129302391
+      tries: 0
+      compact: 0
+      event: 'started'
+    7: <Tracker at 1e0d47cf848: <__main__.Tracker object at 0x000001E0D47CF848>>
+      url: 'wss://tracker.fastcast.nz/announce'
+      info_hash: <str at 0x1e0d47bad50>: "b'\\x08\\xad\\xa5\\xa7\\xa6\\x18:\\xae\\x1e\\t\\xd81\\xdfgH\\xd5f\\tZ\\x10'"
+      size: 129302391
+      tries: 0
+      compact: 0
+      event: 'started'
+  trackers_tasks: <list at 0x1e0d47cf3c8>
+    0: <str at 0x1e0d47bad50>: '<coroutine object Tracker.getPeers at 0x000001E0D47BB9C8>'
+    1: <str at 0x1e0d47bad50>: '<coroutine object Tracker.getPeers at 0x000001E0D47BBA48>'
+    2: <str at 0x1e0d47bad50>: '<coroutine object Tracker.getPeers at 0x000001E0D47BBAC8>'
+    3: <str at 0x1e0d47bad50>: '<coroutine object Tracker.getPeers at 0x000001E0D47BBB48>'
+    4: <str at 0x1e0d47bad50>: '<coroutine object Tracker.getPeers at 0x000001E0D47BBBC8>'
+    5: <str at 0x1e0d47bad50>: '<coroutine object Tracker.getPeers at 0x000001E0D47BBC48>'
+    6: <str at 0x1e0d47bad50>: '<coroutine object Tracker.getPeers at 0x000001E0D47BBCC8>'
+    7: <str at 0x1e0d47bad50>: '<coroutine object Tracker.getPeers at 0x000001E0D47BBD48>'
+  tracker_responses: []
+[['udp://tracker.leechers-paradise.org:6969'], ['udp://tracker.coppersurfer.tk:6969'], ['udp://tracker.opentrackr.org:1337'], ['udp://explodie.org:6969'], ['udp://tracker.empire-js.us:1337'], ['wss://tracker.btorrent.xyz'], ['wss://tracker.openwebtorrent.com'], ['wss://tracker.fastcast.nz']]
+cannot decode response from wss://tracker.btorrent.xyz/announce
+response: b'<!DOCTYPE html>\n<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->\n<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->\n<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->\n<head>\n<title>Access denied | tracker.btorrent.xyz used Cloudflare to restrict access</title>\n<meta charset="UTF-8" />\n<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />\n<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />\n<meta name="robots" content="noindex, nofollow" />\n<meta name="viewport" content="width=device-width,initial-scale=1" />\n<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/cf.errors.css" type="text/css" media="screen,projection" />\n<!--[if lt IE 9]><link rel="stylesheet" id=\'cf_styles-ie-css\' href="/cdn-cgi/styles/cf.errors.ie.css" type="text/css" media="screen,projection" /><![endif]-->\n<style type="text/css">body{margin:0;padding:0}</style>\n\n\n<!--[if gte IE 10]><!--><script type="text/javascript" src="/cdn-cgi/scripts/zepto.min.js"></script><!--<![endif]-->\n<!--[if gte IE 10]><!--><script type="text/javascript" src="/cdn-cgi/scripts/cf.common.js"></script><!--<![endif]-->\n\n\n\n</head>\n<body>\n  <div id="cf-wrapper">\n    <div class="cf-alert cf-alert-error cf-cookie-error" id="cookie-alert" data-translate="enable_cookies">Please enable cookies.</div>\n    <div id="cf-error-details" class="cf-error-details-wrapper">\n      <div class="cf-wrapper cf-header cf-error-overview">\n        <h1>\n          <span class="cf-error-type" data-translate="error">Error</span>\n          <span class="cf-error-code">1020</span>\n          <small class="heading-ray-id">Ray ID: 5a5ab6044ec60579 &bull; 2020-06-19 05:04:44 UTC</small>\n        </h1>\n        <h2 class="cf-subheadline">Access denied</h2>\n      </div><!-- /.header -->\n\n      <section></section><!-- spacer -->\n\n      <div class="cf-section cf-wrapper">\n        <div class="cf-columns two">\n          <div class="cf-column">\n            <h2 data-translate="what_happened">What happened?</h2>\n            <p>This website is using a security service to protect itself from online attacks.</p>\n            \n          </div>\n\n          \n\n        </div>\n      </div><!-- /.section -->\n\n      <div class="cf-error-footer cf-wrapper">\n  <p>\n    <span class="cf-footer-item">Cloudflare Ray ID: <strong>5a5ab6044ec60579</strong></span>\n    <span class="cf-footer-separator">&bull;</span>\n    <span class="cf-footer-item"><span>Your IP</span>: 36.79.248.171</span>\n    <span class="cf-footer-separator">&bull;</span>\n    <span class="cf-footer-item"><span>Performance &amp; security by</span> <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=error_footer" id="brand_link" target="_blank">Cloudflare</a></span>\n    \n  </p>\n</div><!-- /.error-footer -->\n\n\n    </div><!-- /#cf-error-details -->\n  </div><!-- /#cf-wrapper -->\n\n  <script type="text/javascript">\n  window._cf_translation = {};\n  \n  \n</script>\n\n</body>\n</html>\n'
+reconnecting... from tracker wss://tracker.btorrent.xyz/announce using compact mode
+cannot decode response from udp://tracker.opentrackr.org:1337/announce
+response: b'<title>Invalid Request</title>\n'
+reconnecting... from tracker udp://tracker.opentrackr.org:1337/announce using compact mode
+---TRACKER RESPONSE--- udp://explodie.org:6969/announce:b'\x08\xad\xa5\xa7\xa6\x18:\xae\x1e\t\xd81\xdfgH\xd5f\tZ\x10':129302391
+{'complete': 19, 'incomplete': 8, 'interval': 2100, 'min interval': 600, 'peers': [{'ip': '69.156.76.143', 'port': 46208, 'peer id': '-WW0007-hb8y1iFOt6HN'}, {'peer id': '-TR2940-ryt6ar1kayyk', 'ip': '104.194.220.104', 'port': 51413}, {'port': 36199, 'peer id': '-WW0007-Uts/dHluK+wf', 'ip': '129.226.141.165'}, {'peer id': b'-UT355W-h\xb2G\xf0\x1cG\xa4\xae\xa6\xe1WI', 'ip': '95.158.212.185', 'port': 50991}, {'peer id': '-TR2940-6t527w815ekf', 'ip': '171.33.251.184', 'port': 51413}, {'peer id': '-WW0007-1sFVwXJ830i6', 'ip': '114.67.124.135', 'port': 37949}, {'peer id': '-WW0007-hGIMq3ajbvDr', 'ip': '120.79.65.212', 'port': 33961}, {'peer id': '-WW0007-vh39GR7oXmi1', 'ip': '122.51.50.195', 'port': 45654}, {'peer id': b'-lt0D60-\xef\xd6?\xec\xfft\x88\xc6\xaf\xa9L\xe6', 'ip': '185.21.217.74', 'port': 52786}, {'ip': '46.34.228.151', 'port': 54749, 'peer id': '-qB4250-osg*Qea_Gj)0'}, {'peer id': '-WW0007-bLvUkQevrOuf', 'ip': '176.122.159.19', 'port': 33561}, {'ip': '216.36.25.96', 'port': 51413, 'peer id': '-TR2940-snhg39yda7aa'}, {'peer id': '-WW0007-EYm9NygCjYOc', 'ip': '34.96.223.132', 'port': 41773}, {'peer id': '-TR2940-g5c1ad5zql9r', 'ip': '213.195.110.113', 'port': 51413}, {'ip': '49.235.214.135', 'port': 39456, 'peer id': '-WW0007-JMHbgfRsl+Xx'}, {'peer id': '-DE204D-tuJp)ijrFlgP', 'ip': '152.32.69.53', 'port': 56881}, {'peer id': b'-UM1870-\x02\xa4\x8f\x0e?\xe9\xf1\x0c\xce\nd\x03', 'ip': '92.90.124.247', 'port': 43611}, {'peer id': '-WW0007-1lpadZfzAnMk', 'ip': '118.89.121.136', 'port': 37477}, {'ip': '80.103.80.207', 'port': 51413, 'peer id': '-TR2940-y468uhq91jn3'}, {'peer id': 'SISTER-FAWWIS-d07m7m', 'ip': '36.79.248.171', 'port': 6889}, {'ip': '36.79.248.171', 'port': 6889, 'peer id': 'SISTER-FAWWIS-lnd6nr'}, {'peer id': 'SISTER-FAWWIS-u6eemm', 'ip': '36.79.248.171', 'port': 6889}, {'ip': '36.79.248.171', 'port': 6889, 'peer id': 'SISTER-FAWWIS-ymwysa'}, {'peer id': 'SISTER-FAWWIS-l8busf', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-efmvfg', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-m0vv2u', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-sbzx9s', 'ip': '36.79.248.171', 'port': 6889}]}
+tracker_response now: [{'complete': 19, 'incomplete': 8, 'interval': 2100, 'min interval': 600, 'peers': [{'ip': '69.156.76.143', 'port': 46208, 'peer id': '-WW0007-hb8y1iFOt6HN'}, {'peer id': '-TR2940-ryt6ar1kayyk', 'ip': '104.194.220.104', 'port': 51413}, {'port': 36199, 'peer id': '-WW0007-Uts/dHluK+wf', 'ip': '129.226.141.165'}, {'peer id': b'-UT355W-h\xb2G\xf0\x1cG\xa4\xae\xa6\xe1WI', 'ip': '95.158.212.185', 'port': 50991}, {'peer id': '-TR2940-6t527w815ekf', 'ip': '171.33.251.184', 'port': 51413}, {'peer id': '-WW0007-1sFVwXJ830i6', 'ip': '114.67.124.135', 'port': 37949}, {'peer id': '-WW0007-hGIMq3ajbvDr', 'ip': '120.79.65.212', 'port': 33961}, {'peer id': '-WW0007-vh39GR7oXmi1', 'ip': '122.51.50.195', 'port': 45654}, {'peer id': b'-lt0D60-\xef\xd6?\xec\xfft\x88\xc6\xaf\xa9L\xe6', 'ip': '185.21.217.74', 'port': 52786}, {'ip': '46.34.228.151', 'port': 54749, 'peer id': '-qB4250-osg*Qea_Gj)0'}, {'peer id': '-WW0007-bLvUkQevrOuf', 'ip': '176.122.159.19', 'port': 33561}, {'ip': '216.36.25.96', 'port': 51413, 'peer id': '-TR2940-snhg39yda7aa'}, {'peer id': '-WW0007-EYm9NygCjYOc', 'ip': '34.96.223.132', 'port': 41773}, {'peer id': '-TR2940-g5c1ad5zql9r', 'ip': '213.195.110.113', 'port': 51413}, {'ip': '49.235.214.135', 'port': 39456, 'peer id': '-WW0007-JMHbgfRsl+Xx'}, {'peer id': '-DE204D-tuJp)ijrFlgP', 'ip': '152.32.69.53', 'port': 56881}, {'peer id': b'-UM1870-\x02\xa4\x8f\x0e?\xe9\xf1\x0c\xce\nd\x03', 'ip': '92.90.124.247', 'port': 43611}, {'peer id': '-WW0007-1lpadZfzAnMk', 'ip': '118.89.121.136', 'port': 37477}, {'ip': '80.103.80.207', 'port': 51413, 'peer id': '-TR2940-y468uhq91jn3'}, {'peer id': 'SISTER-FAWWIS-d07m7m', 'ip': '36.79.248.171', 'port': 6889}, {'ip': '36.79.248.171', 'port': 6889, 'peer id': 'SISTER-FAWWIS-lnd6nr'}, {'peer id': 'SISTER-FAWWIS-u6eemm', 'ip': '36.79.248.171', 'port': 6889}, {'ip': '36.79.248.171', 'port': 6889, 'peer id': 'SISTER-FAWWIS-ymwysa'}, {'peer id': 'SISTER-FAWWIS-l8busf', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-efmvfg', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-m0vv2u', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-sbzx9s', 'ip': '36.79.248.171', 'port': 6889}]}]
+cannot decode response from wss://tracker.openwebtorrent.com/announce
+response: b'404 Not Found'
+reconnecting... from tracker wss://tracker.openwebtorrent.com/announce using compact mode
+---TRACKER RESPONSE--- udp://tracker.opentrackr.org:1337/announce:b'\x08\xad\xa5\xa7\xa6\x18:\xae\x1e\t\xd81\xdfgH\xd5f\tZ\x10':129302391
+None
+tracker_response now: [{'complete': 19, 'incomplete': 8, 'interval': 2100, 'min interval': 600, 'peers': [{'ip': '69.156.76.143', 'port': 46208, 'peer id': '-WW0007-hb8y1iFOt6HN'}, {'peer id': '-TR2940-ryt6ar1kayyk', 'ip': '104.194.220.104', 'port': 51413}, {'port': 36199, 'peer id': '-WW0007-Uts/dHluK+wf', 'ip': '129.226.141.165'}, {'peer id': b'-UT355W-h\xb2G\xf0\x1cG\xa4\xae\xa6\xe1WI', 'ip': '95.158.212.185', 'port': 50991}, {'peer id': '-TR2940-6t527w815ekf', 'ip': '171.33.251.184', 'port': 51413}, {'peer id': '-WW0007-1sFVwXJ830i6', 'ip': '114.67.124.135', 'port': 37949}, {'peer id': '-WW0007-hGIMq3ajbvDr', 'ip': '120.79.65.212', 'port': 33961}, {'peer id': '-WW0007-vh39GR7oXmi1', 'ip': '122.51.50.195', 'port': 45654}, {'peer id': b'-lt0D60-\xef\xd6?\xec\xfft\x88\xc6\xaf\xa9L\xe6', 'ip': '185.21.217.74', 'port': 52786}, {'ip': '46.34.228.151', 'port': 54749, 'peer id': '-qB4250-osg*Qea_Gj)0'}, {'peer id': '-WW0007-bLvUkQevrOuf', 'ip': '176.122.159.19', 'port': 33561}, {'ip': '216.36.25.96', 'port': 51413, 'peer id': '-TR2940-snhg39yda7aa'}, {'peer id': '-WW0007-EYm9NygCjYOc', 'ip': '34.96.223.132', 'port': 41773}, {'peer id': '-TR2940-g5c1ad5zql9r', 'ip': '213.195.110.113', 'port': 51413}, {'ip': '49.235.214.135', 'port': 39456, 'peer id': '-WW0007-JMHbgfRsl+Xx'}, {'peer id': '-DE204D-tuJp)ijrFlgP', 'ip': '152.32.69.53', 'port': 56881}, {'peer id': b'-UM1870-\x02\xa4\x8f\x0e?\xe9\xf1\x0c\xce\nd\x03', 'ip': '92.90.124.247', 'port': 43611}, {'peer id': '-WW0007-1lpadZfzAnMk', 'ip': '118.89.121.136', 'port': 37477}, {'ip': '80.103.80.207', 'port': 51413, 'peer id': '-TR2940-y468uhq91jn3'}, {'peer id': 'SISTER-FAWWIS-d07m7m', 'ip': '36.79.248.171', 'port': 6889}, {'ip': '36.79.248.171', 'port': 6889, 'peer id': 'SISTER-FAWWIS-lnd6nr'}, {'peer id': 'SISTER-FAWWIS-u6eemm', 'ip': '36.79.248.171', 'port': 6889}, {'ip': '36.79.248.171', 'port': 6889, 'peer id': 'SISTER-FAWWIS-ymwysa'}, {'peer id': 'SISTER-FAWWIS-l8busf', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-efmvfg', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-m0vv2u', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-sbzx9s', 'ip': '36.79.248.171', 'port': 6889}]}]
+cannot decode response from wss://tracker.btorrent.xyz/announce
+response: b'<!DOCTYPE html>\n<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->\n<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->\n<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->\n<head>\n<title>Access denied | tracker.btorrent.xyz used Cloudflare to restrict access</title>\n<meta charset="UTF-8" />\n<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />\n<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />\n<meta name="robots" content="noindex, nofollow" />\n<meta name="viewport" content="width=device-width,initial-scale=1" />\n<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/cf.errors.css" type="text/css" media="screen,projection" />\n<!--[if lt IE 9]><link rel="stylesheet" id=\'cf_styles-ie-css\' href="/cdn-cgi/styles/cf.errors.ie.css" type="text/css" media="screen,projection" /><![endif]-->\n<style type="text/css">body{margin:0;padding:0}</style>\n\n\n<!--[if gte IE 10]><!--><script type="text/javascript" src="/cdn-cgi/scripts/zepto.min.js"></script><!--<![endif]-->\n<!--[if gte IE 10]><!--><script type="text/javascript" src="/cdn-cgi/scripts/cf.common.js"></script><!--<![endif]-->\n\n\n\n</head>\n<body>\n  <div id="cf-wrapper">\n    <div class="cf-alert cf-alert-error cf-cookie-error" id="cookie-alert" data-translate="enable_cookies">Please enable cookies.</div>\n    <div id="cf-error-details" class="cf-error-details-wrapper">\n      <div class="cf-wrapper cf-header cf-error-overview">\n        <h1>\n          <span class="cf-error-type" data-translate="error">Error</span>\n          <span class="cf-error-code">1020</span>\n          <small class="heading-ray-id">Ray ID: 5a5ab614baec7866 &bull; 2020-06-19 05:04:46 UTC</small>\n        </h1>\n        <h2 class="cf-subheadline">Access denied</h2>\n      </div><!-- /.header -->\n\n      <section></section><!-- spacer -->\n\n      <div class="cf-section cf-wrapper">\n        <div class="cf-columns two">\n          <div class="cf-column">\n            <h2 data-translate="what_happened">What happened?</h2>\n            <p>This website is using a security service to protect itself from online attacks.</p>\n            \n          </div>\n\n          \n\n        </div>\n      </div><!-- /.section -->\n\n      <div class="cf-error-footer cf-wrapper">\n  <p>\n    <span class="cf-footer-item">Cloudflare Ray ID: <strong>5a5ab614baec7866</strong></span>\n    <span class="cf-footer-separator">&bull;</span>\n    <span class="cf-footer-item"><span>Your IP</span>: 36.79.248.171</span>\n    <span class="cf-footer-separator">&bull;</span>\n    <span class="cf-footer-item"><span>Performance &amp; security by</span> <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=error_footer" id="brand_link" target="_blank">Cloudflare</a></span>\n    \n  </p>\n</div><!-- /.error-footer -->\n\n\n    </div><!-- /#cf-error-details -->\n  </div><!-- /#cf-wrapper -->\n\n  <script type="text/javascript">\n  window._cf_translation = {};\n  \n  \n</script>\n\n</body>\n</html>\n'
+cannot connect to tracker wss://tracker.btorrent.xyz/announce!
+---TRACKER RESPONSE--- wss://tracker.btorrent.xyz/announce:b'\x08\xad\xa5\xa7\xa6\x18:\xae\x1e\t\xd81\xdfgH\xd5f\tZ\x10':129302391
+None
+tracker_response now: [{'complete': 19, 'incomplete': 8, 'interval': 2100, 'min interval': 600, 'peers': [{'ip': '69.156.76.143', 'port': 46208, 'peer id': '-WW0007-hb8y1iFOt6HN'}, {'peer id': '-TR2940-ryt6ar1kayyk', 'ip': '104.194.220.104', 'port': 51413}, {'port': 36199, 'peer id': '-WW0007-Uts/dHluK+wf', 'ip': '129.226.141.165'}, {'peer id': b'-UT355W-h\xb2G\xf0\x1cG\xa4\xae\xa6\xe1WI', 'ip': '95.158.212.185', 'port': 50991}, {'peer id': '-TR2940-6t527w815ekf', 'ip': '171.33.251.184', 'port': 51413}, {'peer id': '-WW0007-1sFVwXJ830i6', 'ip': '114.67.124.135', 'port': 37949}, {'peer id': '-WW0007-hGIMq3ajbvDr', 'ip': '120.79.65.212', 'port': 33961}, {'peer id': '-WW0007-vh39GR7oXmi1', 'ip': '122.51.50.195', 'port': 45654}, {'peer id': b'-lt0D60-\xef\xd6?\xec\xfft\x88\xc6\xaf\xa9L\xe6', 'ip': '185.21.217.74', 'port': 52786}, {'ip': '46.34.228.151', 'port': 54749, 'peer id': '-qB4250-osg*Qea_Gj)0'}, {'peer id': '-WW0007-bLvUkQevrOuf', 'ip': '176.122.159.19', 'port': 33561}, {'ip': '216.36.25.96', 'port': 51413, 'peer id': '-TR2940-snhg39yda7aa'}, {'peer id': '-WW0007-EYm9NygCjYOc', 'ip': '34.96.223.132', 'port': 41773}, {'peer id': '-TR2940-g5c1ad5zql9r', 'ip': '213.195.110.113', 'port': 51413}, {'ip': '49.235.214.135', 'port': 39456, 'peer id': '-WW0007-JMHbgfRsl+Xx'}, {'peer id': '-DE204D-tuJp)ijrFlgP', 'ip': '152.32.69.53', 'port': 56881}, {'peer id': b'-UM1870-\x02\xa4\x8f\x0e?\xe9\xf1\x0c\xce\nd\x03', 'ip': '92.90.124.247', 'port': 43611}, {'peer id': '-WW0007-1lpadZfzAnMk', 'ip': '118.89.121.136', 'port': 37477}, {'ip': '80.103.80.207', 'port': 51413, 'peer id': '-TR2940-y468uhq91jn3'}, {'peer id': 'SISTER-FAWWIS-d07m7m', 'ip': '36.79.248.171', 'port': 6889}, {'ip': '36.79.248.171', 'port': 6889, 'peer id': 'SISTER-FAWWIS-lnd6nr'}, {'peer id': 'SISTER-FAWWIS-u6eemm', 'ip': '36.79.248.171', 'port': 6889}, {'ip': '36.79.248.171', 'port': 6889, 'peer id': 'SISTER-FAWWIS-ymwysa'}, {'peer id': 'SISTER-FAWWIS-l8busf', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-efmvfg', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-m0vv2u', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-sbzx9s', 'ip': '36.79.248.171', 'port': 6889}]}]
+cannot decode response from wss://tracker.openwebtorrent.com/announce
+response: b'404 Not Found'
+cannot connect to tracker wss://tracker.openwebtorrent.com/announce!
+---TRACKER RESPONSE--- wss://tracker.openwebtorrent.com/announce:b'\x08\xad\xa5\xa7\xa6\x18:\xae\x1e\t\xd81\xdfgH\xd5f\tZ\x10':129302391
+None
+tracker_response now: [{'complete': 19, 'incomplete': 8, 'interval': 2100, 'min interval': 600, 'peers': [{'ip': '69.156.76.143', 'port': 46208, 'peer id': '-WW0007-hb8y1iFOt6HN'}, {'peer id': '-TR2940-ryt6ar1kayyk', 'ip': '104.194.220.104', 'port': 51413}, {'port': 36199, 'peer id': '-WW0007-Uts/dHluK+wf', 'ip': '129.226.141.165'}, {'peer id': b'-UT355W-h\xb2G\xf0\x1cG\xa4\xae\xa6\xe1WI', 'ip': '95.158.212.185', 'port': 50991}, {'peer id': '-TR2940-6t527w815ekf', 'ip': '171.33.251.184', 'port': 51413}, {'peer id': '-WW0007-1sFVwXJ830i6', 'ip': '114.67.124.135', 'port': 37949}, {'peer id': '-WW0007-hGIMq3ajbvDr', 'ip': '120.79.65.212', 'port': 33961}, {'peer id': '-WW0007-vh39GR7oXmi1', 'ip': '122.51.50.195', 'port': 45654}, {'peer id': b'-lt0D60-\xef\xd6?\xec\xfft\x88\xc6\xaf\xa9L\xe6', 'ip': '185.21.217.74', 'port': 52786}, {'ip': '46.34.228.151', 'port': 54749, 'peer id': '-qB4250-osg*Qea_Gj)0'}, {'peer id': '-WW0007-bLvUkQevrOuf', 'ip': '176.122.159.19', 'port': 33561}, {'ip': '216.36.25.96', 'port': 51413, 'peer id': '-TR2940-snhg39yda7aa'}, {'peer id': '-WW0007-EYm9NygCjYOc', 'ip': '34.96.223.132', 'port': 41773}, {'peer id': '-TR2940-g5c1ad5zql9r', 'ip': '213.195.110.113', 'port': 51413}, {'ip': '49.235.214.135', 'port': 39456, 'peer id': '-WW0007-JMHbgfRsl+Xx'}, {'peer id': '-DE204D-tuJp)ijrFlgP', 'ip': '152.32.69.53', 'port': 56881}, {'peer id': b'-UM1870-\x02\xa4\x8f\x0e?\xe9\xf1\x0c\xce\nd\x03', 'ip': '92.90.124.247', 'port': 43611}, {'peer id': '-WW0007-1lpadZfzAnMk', 'ip': '118.89.121.136', 'port': 37477}, {'ip': '80.103.80.207', 'port': 51413, 'peer id': '-TR2940-y468uhq91jn3'}, {'peer id': 'SISTER-FAWWIS-d07m7m', 'ip': '36.79.248.171', 'port': 6889}, {'ip': '36.79.248.171', 'port': 6889, 'peer id': 'SISTER-FAWWIS-lnd6nr'}, {'peer id': 'SISTER-FAWWIS-u6eemm', 'ip': '36.79.248.171', 'port': 6889}, {'ip': '36.79.248.171', 'port': 6889, 'peer id': 'SISTER-FAWWIS-ymwysa'}, {'peer id': 'SISTER-FAWWIS-l8busf', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-efmvfg', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-m0vv2u', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-sbzx9s', 'ip': '36.79.248.171', 'port': 6889}]}]
+Cannot connect to host tracker.fastcast.nz:443 ssl:default [Connect call failed ('36.86.63.182', 443)]
+<class 'aiohttp.client_exceptions.ClientConnectorError'>
+reconnecting... from tracker wss://tracker.fastcast.nz/announce using compact mode
+Cannot connect to host tracker.coppersurfer.tk:6969 ssl:default [Connect call failed ('31.14.40.30', 6969)]
+<class 'aiohttp.client_exceptions.ClientConnectorError'>
+reconnecting... from tracker udp://tracker.coppersurfer.tk:6969/announce using compact mode
+Cannot connect to host tracker.leechers-paradise.org:6969 ssl:default [Connect call failed ('188.241.58.209', 6969)]
+<class 'aiohttp.client_exceptions.ClientConnectorError'>
+reconnecting... from tracker udp://tracker.leechers-paradise.org:6969/announce using compact mode
+Cannot connect to host tracker.empire-js.us:1337 ssl:default [Connect call failed ('208.100.26.250', 1337)]
+<class 'aiohttp.client_exceptions.ClientConnectorError'>
+reconnecting... from tracker udp://tracker.empire-js.us:1337/announce using compact mode
+Cannot connect to host tracker.empire-js.us:1337 ssl:default [Connect call failed ('208.100.26.250', 1337)]
+<class 'aiohttp.client_exceptions.ClientConnectorError'>
+cannot connect to tracker udp://tracker.empire-js.us:1337/announce!
+---TRACKER RESPONSE--- udp://tracker.empire-js.us:1337/announce:b'\x08\xad\xa5\xa7\xa6\x18:\xae\x1e\t\xd81\xdfgH\xd5f\tZ\x10':129302391
+None
+tracker_response now: [{'complete': 19, 'incomplete': 8, 'interval': 2100, 'min interval': 600, 'peers': [{'ip': '69.156.76.143', 'port': 46208, 'peer id': '-WW0007-hb8y1iFOt6HN'}, {'peer id': '-TR2940-ryt6ar1kayyk', 'ip': '104.194.220.104', 'port': 51413}, {'port': 36199, 'peer id': '-WW0007-Uts/dHluK+wf', 'ip': '129.226.141.165'}, {'peer id': b'-UT355W-h\xb2G\xf0\x1cG\xa4\xae\xa6\xe1WI', 'ip': '95.158.212.185', 'port': 50991}, {'peer id': '-TR2940-6t527w815ekf', 'ip': '171.33.251.184', 'port': 51413}, {'peer id': '-WW0007-1sFVwXJ830i6', 'ip': '114.67.124.135', 'port': 37949}, {'peer id': '-WW0007-hGIMq3ajbvDr', 'ip': '120.79.65.212', 'port': 33961}, {'peer id': '-WW0007-vh39GR7oXmi1', 'ip': '122.51.50.195', 'port': 45654}, {'peer id': b'-lt0D60-\xef\xd6?\xec\xfft\x88\xc6\xaf\xa9L\xe6', 'ip': '185.21.217.74', 'port': 52786}, {'ip': '46.34.228.151', 'port': 54749, 'peer id': '-qB4250-osg*Qea_Gj)0'}, {'peer id': '-WW0007-bLvUkQevrOuf', 'ip': '176.122.159.19', 'port': 33561}, {'ip': '216.36.25.96', 'port': 51413, 'peer id': '-TR2940-snhg39yda7aa'}, {'peer id': '-WW0007-EYm9NygCjYOc', 'ip': '34.96.223.132', 'port': 41773}, {'peer id': '-TR2940-g5c1ad5zql9r', 'ip': '213.195.110.113', 'port': 51413}, {'ip': '49.235.214.135', 'port': 39456, 'peer id': '-WW0007-JMHbgfRsl+Xx'}, {'peer id': '-DE204D-tuJp)ijrFlgP', 'ip': '152.32.69.53', 'port': 56881}, {'peer id': b'-UM1870-\x02\xa4\x8f\x0e?\xe9\xf1\x0c\xce\nd\x03', 'ip': '92.90.124.247', 'port': 43611}, {'peer id': '-WW0007-1lpadZfzAnMk', 'ip': '118.89.121.136', 'port': 37477}, {'ip': '80.103.80.207', 'port': 51413, 'peer id': '-TR2940-y468uhq91jn3'}, {'peer id': 'SISTER-FAWWIS-d07m7m', 'ip': '36.79.248.171', 'port': 6889}, {'ip': '36.79.248.171', 'port': 6889, 'peer id': 'SISTER-FAWWIS-lnd6nr'}, {'peer id': 'SISTER-FAWWIS-u6eemm', 'ip': '36.79.248.171', 'port': 6889}, {'ip': '36.79.248.171', 'port': 6889, 'peer id': 'SISTER-FAWWIS-ymwysa'}, {'peer id': 'SISTER-FAWWIS-l8busf', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-efmvfg', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-m0vv2u', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-sbzx9s', 'ip': '36.79.248.171', 'port': 6889}]}]
+Cannot connect to host tracker.fastcast.nz:443 ssl:default [Connect call failed ('36.86.63.182', 443)]
+<class 'aiohttp.client_exceptions.ClientConnectorError'>
+cannot connect to tracker wss://tracker.fastcast.nz/announce!
+---TRACKER RESPONSE--- wss://tracker.fastcast.nz/announce:b'\x08\xad\xa5\xa7\xa6\x18:\xae\x1e\t\xd81\xdfgH\xd5f\tZ\x10':129302391
+None
+tracker_response now: [{'complete': 19, 'incomplete': 8, 'interval': 2100, 'min interval': 600, 'peers': [{'ip': '69.156.76.143', 'port': 46208, 'peer id': '-WW0007-hb8y1iFOt6HN'}, {'peer id': '-TR2940-ryt6ar1kayyk', 'ip': '104.194.220.104', 'port': 51413}, {'port': 36199, 'peer id': '-WW0007-Uts/dHluK+wf', 'ip': '129.226.141.165'}, {'peer id': b'-UT355W-h\xb2G\xf0\x1cG\xa4\xae\xa6\xe1WI', 'ip': '95.158.212.185', 'port': 50991}, {'peer id': '-TR2940-6t527w815ekf', 'ip': '171.33.251.184', 'port': 51413}, {'peer id': '-WW0007-1sFVwXJ830i6', 'ip': '114.67.124.135', 'port': 37949}, {'peer id': '-WW0007-hGIMq3ajbvDr', 'ip': '120.79.65.212', 'port': 33961}, {'peer id': '-WW0007-vh39GR7oXmi1', 'ip': '122.51.50.195', 'port': 45654}, {'peer id': b'-lt0D60-\xef\xd6?\xec\xfft\x88\xc6\xaf\xa9L\xe6', 'ip': '185.21.217.74', 'port': 52786}, {'ip': '46.34.228.151', 'port': 54749, 'peer id': '-qB4250-osg*Qea_Gj)0'}, {'peer id': '-WW0007-bLvUkQevrOuf', 'ip': '176.122.159.19', 'port': 33561}, {'ip': '216.36.25.96', 'port': 51413, 'peer id': '-TR2940-snhg39yda7aa'}, {'peer id': '-WW0007-EYm9NygCjYOc', 'ip': '34.96.223.132', 'port': 41773}, {'peer id': '-TR2940-g5c1ad5zql9r', 'ip': '213.195.110.113', 'port': 51413}, {'ip': '49.235.214.135', 'port': 39456, 'peer id': '-WW0007-JMHbgfRsl+Xx'}, {'peer id': '-DE204D-tuJp)ijrFlgP', 'ip': '152.32.69.53', 'port': 56881}, {'peer id': b'-UM1870-\x02\xa4\x8f\x0e?\xe9\xf1\x0c\xce\nd\x03', 'ip': '92.90.124.247', 'port': 43611}, {'peer id': '-WW0007-1lpadZfzAnMk', 'ip': '118.89.121.136', 'port': 37477}, {'ip': '80.103.80.207', 'port': 51413, 'peer id': '-TR2940-y468uhq91jn3'}, {'peer id': 'SISTER-FAWWIS-d07m7m', 'ip': '36.79.248.171', 'port': 6889}, {'ip': '36.79.248.171', 'port': 6889, 'peer id': 'SISTER-FAWWIS-lnd6nr'}, {'peer id': 'SISTER-FAWWIS-u6eemm', 'ip': '36.79.248.171', 'port': 6889}, {'ip': '36.79.248.171', 'port': 6889, 'peer id': 'SISTER-FAWWIS-ymwysa'}, {'peer id': 'SISTER-FAWWIS-l8busf', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-efmvfg', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-m0vv2u', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-sbzx9s', 'ip': '36.79.248.171', 'port': 6889}]}]
+Cannot connect to host tracker.coppersurfer.tk:6969 ssl:default [Connect call failed ('31.14.40.30', 6969)]
+<class 'aiohttp.client_exceptions.ClientConnectorError'>
+cannot connect to tracker udp://tracker.coppersurfer.tk:6969/announce!
+---TRACKER RESPONSE--- udp://tracker.coppersurfer.tk:6969/announce:b'\x08\xad\xa5\xa7\xa6\x18:\xae\x1e\t\xd81\xdfgH\xd5f\tZ\x10':129302391
+None
+Cannot connect to host tracker.leechers-paradise.org:6969 ssl:default [Connect call failed ('188.241.58.209', 6969)]
+<class 'aiohttp.client_exceptions.ClientConnectorError'>
+cannot connect to tracker udp://tracker.leechers-paradise.org:6969/announce!
+---TRACKER RESPONSE--- udp://tracker.leechers-paradise.org:6969/announce:b'\x08\xad\xa5\xa7\xa6\x18:\xae\x1e\t\xd81\xdfgH\xd5f\tZ\x10':129302391
+None
+tracker_response now: [{'complete': 19, 'incomplete': 8, 'interval': 2100, 'min interval': 600, 'peers': [{'ip': '69.156.76.143', 'port': 46208, 'peer id': '-WW0007-hb8y1iFOt6HN'}, {'peer id': '-TR2940-ryt6ar1kayyk', 'ip': '104.194.220.104', 'port': 51413}, {'port': 36199, 'peer id': '-WW0007-Uts/dHluK+wf', 'ip': '129.226.141.165'}, {'peer id': b'-UT355W-h\xb2G\xf0\x1cG\xa4\xae\xa6\xe1WI', 'ip': '95.158.212.185', 'port': 50991}, {'peer id': '-TR2940-6t527w815ekf', 'ip': '171.33.251.184', 'port': 51413}, {'peer id': '-WW0007-1sFVwXJ830i6', 'ip': '114.67.124.135', 'port': 37949}, {'peer id': '-WW0007-hGIMq3ajbvDr', 'ip': '120.79.65.212', 'port': 33961}, {'peer id': '-WW0007-vh39GR7oXmi1', 'ip': '122.51.50.195', 'port': 45654}, {'peer id': b'-lt0D60-\xef\xd6?\xec\xfft\x88\xc6\xaf\xa9L\xe6', 'ip': '185.21.217.74', 'port': 52786}, {'ip': '46.34.228.151', 'port': 54749, 'peer id': '-qB4250-osg*Qea_Gj)0'}, {'peer id': '-WW0007-bLvUkQevrOuf', 'ip': '176.122.159.19', 'port': 33561}, {'ip': '216.36.25.96', 'port': 51413, 'peer id': '-TR2940-snhg39yda7aa'}, {'peer id': '-WW0007-EYm9NygCjYOc', 'ip': '34.96.223.132', 'port': 41773}, {'peer id': '-TR2940-g5c1ad5zql9r', 'ip': '213.195.110.113', 'port': 51413}, {'ip': '49.235.214.135', 'port': 39456, 'peer id': '-WW0007-JMHbgfRsl+Xx'}, {'peer id': '-DE204D-tuJp)ijrFlgP', 'ip': '152.32.69.53', 'port': 56881}, {'peer id': b'-UM1870-\x02\xa4\x8f\x0e?\xe9\xf1\x0c\xce\nd\x03', 'ip': '92.90.124.247', 'port': 43611}, {'peer id': '-WW0007-1lpadZfzAnMk', 'ip': '118.89.121.136', 'port': 37477}, {'ip': '80.103.80.207', 'port': 51413, 'peer id': '-TR2940-y468uhq91jn3'}, {'peer id': 'SISTER-FAWWIS-d07m7m', 'ip': '36.79.248.171', 'port': 6889}, {'ip': '36.79.248.171', 'port': 6889, 'peer id': 'SISTER-FAWWIS-lnd6nr'}, {'peer id': 'SISTER-FAWWIS-u6eemm', 'ip': '36.79.248.171', 'port': 6889}, {'ip': '36.79.248.171', 'port': 6889, 'peer id': 'SISTER-FAWWIS-ymwysa'}, {'peer id': 'SISTER-FAWWIS-l8busf', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-efmvfg', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-m0vv2u', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-sbzx9s', 'ip': '36.79.248.171', 'port': 6889}]}]
+tracker_response now: [{'complete': 19, 'incomplete': 8, 'interval': 2100, 'min interval': 600, 'peers': [{'ip': '69.156.76.143', 'port': 46208, 'peer id': '-WW0007-hb8y1iFOt6HN'}, {'peer id': '-TR2940-ryt6ar1kayyk', 'ip': '104.194.220.104', 'port': 51413}, {'port': 36199, 'peer id': '-WW0007-Uts/dHluK+wf', 'ip': '129.226.141.165'}, {'peer id': b'-UT355W-h\xb2G\xf0\x1cG\xa4\xae\xa6\xe1WI', 'ip': '95.158.212.185', 'port': 50991}, {'peer id': '-TR2940-6t527w815ekf', 'ip': '171.33.251.184', 'port': 51413}, {'peer id': '-WW0007-1sFVwXJ830i6', 'ip': '114.67.124.135', 'port': 37949}, {'peer id': '-WW0007-hGIMq3ajbvDr', 'ip': '120.79.65.212', 'port': 33961}, {'peer id': '-WW0007-vh39GR7oXmi1', 'ip': '122.51.50.195', 'port': 45654}, {'peer id': b'-lt0D60-\xef\xd6?\xec\xfft\x88\xc6\xaf\xa9L\xe6', 'ip': '185.21.217.74', 'port': 52786}, {'ip': '46.34.228.151', 'port': 54749, 'peer id': '-qB4250-osg*Qea_Gj)0'}, {'peer id': '-WW0007-bLvUkQevrOuf', 'ip': '176.122.159.19', 'port': 33561}, {'ip': '216.36.25.96', 'port': 51413, 'peer id': '-TR2940-snhg39yda7aa'}, {'peer id': '-WW0007-EYm9NygCjYOc', 'ip': '34.96.223.132', 'port': 41773}, {'peer id': '-TR2940-g5c1ad5zql9r', 'ip': '213.195.110.113', 'port': 51413}, {'ip': '49.235.214.135', 'port': 39456, 'peer id': '-WW0007-JMHbgfRsl+Xx'}, {'peer id': '-DE204D-tuJp)ijrFlgP', 'ip': '152.32.69.53', 'port': 56881}, {'peer id': b'-UM1870-\x02\xa4\x8f\x0e?\xe9\xf1\x0c\xce\nd\x03', 'ip': '92.90.124.247', 'port': 43611}, {'peer id': '-WW0007-1lpadZfzAnMk', 'ip': '118.89.121.136', 'port': 37477}, {'ip': '80.103.80.207', 'port': 51413, 'peer id': '-TR2940-y468uhq91jn3'}, {'peer id': 'SISTER-FAWWIS-d07m7m', 'ip': '36.79.248.171', 'port': 6889}, {'ip': '36.79.248.171', 'port': 6889, 'peer id': 'SISTER-FAWWIS-lnd6nr'}, {'peer id': 'SISTER-FAWWIS-u6eemm', 'ip': '36.79.248.171', 'port': 6889}, {'ip': '36.79.248.171', 'port': 6889, 'peer id': 'SISTER-FAWWIS-ymwysa'}, {'peer id': 'SISTER-FAWWIS-l8busf', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-efmvfg', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-m0vv2u', 'ip': '36.79.248.171', 'port': 6889}, {'peer id': 'SISTER-FAWWIS-sbzx9s', 'ip': '36.79.248.171', 'port': 6889}]}]
+TASKS COMPLETED!
+peers
+[{'ip': '69.156.76.143', 'peer id': '-WW0007-hb8y1iFOt6HN', 'port': 46208},
+ {'ip': '104.194.220.104', 'peer id': '-TR2940-ryt6ar1kayyk', 'port': 51413},
+ {'ip': '129.226.141.165', 'peer id': '-WW0007-Uts/dHluK+wf', 'port': 36199},
+ {'ip': '95.158.212.185',
+  'peer id': b'-UT355W-h\xb2G\xf0\x1cG\xa4\xae\xa6\xe1WI',
+  'port': 50991},
+ {'ip': '171.33.251.184', 'peer id': '-TR2940-6t527w815ekf', 'port': 51413},
+ {'ip': '114.67.124.135', 'peer id': '-WW0007-1sFVwXJ830i6', 'port': 37949},
+ {'ip': '120.79.65.212', 'peer id': '-WW0007-hGIMq3ajbvDr', 'port': 33961},
+ {'ip': '122.51.50.195', 'peer id': '-WW0007-vh39GR7oXmi1', 'port': 45654},
+ {'ip': '185.21.217.74',
+  'peer id': b'-lt0D60-\xef\xd6?\xec\xfft\x88\xc6\xaf\xa9L\xe6',
+  'port': 52786},
+ {'ip': '46.34.228.151', 'peer id': '-qB4250-osg*Qea_Gj)0', 'port': 54749},
+ {'ip': '176.122.159.19', 'peer id': '-WW0007-bLvUkQevrOuf', 'port': 33561},
+ {'ip': '216.36.25.96', 'peer id': '-TR2940-snhg39yda7aa', 'port': 51413},
+ {'ip': '34.96.223.132', 'peer id': '-WW0007-EYm9NygCjYOc', 'port': 41773},
+ {'ip': '213.195.110.113', 'peer id': '-TR2940-g5c1ad5zql9r', 'port': 51413},
+ {'ip': '49.235.214.135', 'peer id': '-WW0007-JMHbgfRsl+Xx', 'port': 39456},
+ {'ip': '152.32.69.53', 'peer id': '-DE204D-tuJp)ijrFlgP', 'port': 56881},
+ {'ip': '92.90.124.247',
+  'peer id': b'-UM1870-\x02\xa4\x8f\x0e?\xe9\xf1\x0c\xce\nd\x03',
+  'port': 43611},
+ {'ip': '118.89.121.136', 'peer id': '-WW0007-1lpadZfzAnMk', 'port': 37477},
+ {'ip': '80.103.80.207', 'peer id': '-TR2940-y468uhq91jn3', 'port': 51413},
+ {'ip': '36.79.248.171', 'peer id': 'SISTER-FAWWIS-d07m7m', 'port': 6889}]
+peers compact
+[{'ip': '69.156.76.143', 'port': 46208},
+ {'ip': '104.194.220.104', 'port': 51413},
+ {'ip': '129.226.141.165', 'port': 36199},
+ {'ip': '95.158.212.185', 'port': 50991},
+ {'ip': '171.33.251.184', 'port': 51413},
+ {'ip': '114.67.124.135', 'port': 37949},
+ {'ip': '120.79.65.212', 'port': 33961},
+ {'ip': '122.51.50.195', 'port': 45654},
+ {'ip': '185.21.217.74', 'port': 52786},
+ {'ip': '46.34.228.151', 'port': 54749},
+ {'ip': '176.122.159.19', 'port': 33561},
+ {'ip': '216.36.25.96', 'port': 51413},
+ {'ip': '34.96.223.132', 'port': 41773},
+ {'ip': '213.195.110.113', 'port': 51413},
+ {'ip': '49.235.214.135', 'port': 39456},
+ {'ip': '152.32.69.53', 'port': 56881},
+ {'ip': '92.90.124.247', 'port': 43611},
+ {'ip': '118.89.121.136', 'port': 37477},
+ {'ip': '80.103.80.207', 'port': 51413},
+ {'ip': '36.79.248.171', 'port': 6889}]
