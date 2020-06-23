@@ -10,10 +10,12 @@
   - [x] Create request messages
   - [x] Decode response messages
 - [ ] ***Connect to peers**
+  - [ ] Make Block and Piece
   - [ ] Make peer states and messages
   - [ ] Make a connection
-- [ ] Make blocks and pieces manager
+- [ ] Make Pieces Manager
 - [ ] Write data to disk
+- [ ] Make Peer Manager
 - [ ] Seed data
 - [ ] Bonus: Making some GUI
 - [ ] Bonus: implements rarest-piece-first selection strategy

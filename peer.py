@@ -1,10 +1,4 @@
-import struct
 from typing import List, Dict
-
-HANDSHAKE_RESERVED = b'\x00' * 8
-HANDSHAKE_PSTR = b'BitTorrent protocol'
-HANDSHAKE_PSTRLEN = len(HANDSHAKE_PSTR)
-        
 
 class PeerManager():
     def __init__(self, peer_list: List, info_hash, peer_id: str):
@@ -28,11 +22,5 @@ class Peer():
         }
         self.peer_id = peer_id
 
-    def handshakeMsg(self):
-        return struct.pack(f'>B{HANDSHAKE_PSTRLEN}s8s20s20s',
-            HANDSHAKE_PSTRLEN,
-            HANDSHAKE_PSTR,
-            HANDSHAKE_RESERVED,
-            self.info_hash,
-            self.peer_id
-        )
+    def try_communicate(self):
+        pass
