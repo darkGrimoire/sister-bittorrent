@@ -270,7 +270,7 @@ if __name__ == "__main__":
     from dumper import dump
     from torrent import Torrent
     torrent = Torrent('sintel.torrent')
-    handshake = Handshake('SISTER-asdf', torrent.getInfoHash()).writeMessage()
+    handshake = Handshake('SISTER-g5mmig2atmetn', torrent.getInfoHash()).writeMessage()
     read_handshake = Handshake.readMessage(handshake)
     interested = Interested().writeMessage()
     read_interested = Message.determineMessage(interested)
