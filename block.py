@@ -1,4 +1,5 @@
 import time
+from enum import Enum
 BLOCK_SIZE = 2**14
 
 class State(Enum):

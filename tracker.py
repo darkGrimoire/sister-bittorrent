@@ -8,7 +8,6 @@ from aiohttp import ClientSession
 from urllib.parse import urlencode
 from pprint import pformat
 from bcoding import bdecode
-from dumper import dump
 from torrent import Torrent
 import util
 
@@ -146,6 +145,9 @@ async def main(torrent):
     print(pformat(trackman.getPeersOnly()))
 
 if __name__ == "__main__":
+    from dumper import dump
+    import messages
+    import piece
     torrent = Torrent('sintel.torrent')
     loop = asyncio.get_event_loop()
     print(torrent.getAnnounceList())

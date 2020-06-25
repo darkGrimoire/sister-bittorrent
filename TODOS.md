@@ -10,7 +10,7 @@
   - [x] Create request messages
   - [x] Decode response messages
 - [ ] ***Connect to peers**
-  - [ ] Make Block and Piece
+  - [x] Make Block and Piece
   - [ ] Make peer states and messages
   - [ ] Make a connection
 - [ ] Make Pieces Manager

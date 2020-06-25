@@ -48,6 +48,8 @@ class Torrent():
         return self.metainfo['info']['pieces'][idx*20:idx*20+20]
     def getSize(self) -> int:
         return self.metainfo['info']['length'] if self.file_mode else sum(afile["length"] for afile in self.metainfo["info"]["files"])
+    def getPieceSize(self) -> int:
+        return self.metainfo['info']['piece length']
     
     # Construction related methods
     def decode_file(self) -> Dict:
@@ -67,7 +69,7 @@ class Torrent():
 
 if __name__ == "__main__":
     tor = Torrent('sintel.torrent')
-    # dump(tor)
+    dump(tor)
     urls = tor.getAnnounceList()
     for url in urls:
         print(url)
