@@ -21,7 +21,7 @@ class PieceManager():
         self.pieces.append(Piece(num_of_pieces-1, self.torrent.getHashPiece(num_of_pieces-1), last_piece_size))
 
 class Piece():
-    def __init__(self, piece_index, piece_hash, piece_size):
+    def __init__(self, piece_index: int, piece_hash: bytes, piece_size: int):
         self.piece_index = piece_index
         self.piece_hash = piece_hash
         self.piece_size = piece_size

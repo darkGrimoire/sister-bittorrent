@@ -21,7 +21,7 @@ class Message():
         try:
             _, message_id = struct.unpack('>IB', payload[:5])
         except:
-            print('Unpack message error')
+            print('MESSAGES: Unpack message error')
             return None
         
         translate_id = {

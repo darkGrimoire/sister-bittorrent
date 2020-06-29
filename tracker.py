@@ -2,7 +2,7 @@ import random
 import string
 import ipaddress
 import struct
-from typing import Type, Dict, Optional
+from typing import Dict, Optional
 import asyncio
 from aiohttp import ClientSession
 from urllib.parse import urlencode
@@ -19,7 +19,7 @@ PEER_ID = 'SISTER-' + ''.join(
 MAX_RETRY = 2
 
 class TrackerManager():
-    def __init__(self, torrent: Type[Torrent]):
+    def __init__(self, torrent: Torrent):
         self.torrent = torrent
         self.trackers_url = torrent.getAnnounceList()
         self.trackers = [Tracker(url[0], self.torrent.getInfoHash(), self.torrent.getSize()) for url in self.trackers_url]
@@ -31,7 +31,7 @@ class TrackerManager():
             tracker_resp = await res
             if tracker_resp:
                 self.tracker_responses.append(tracker_resp)
-            print(f'tracker_response now: {self.tracker_responses}')
+            print(f'TRACKER: tracker_response now: {self.tracker_responses}')
     
     def getPeersOnly(self):
         peers = []
@@ -88,14 +88,14 @@ class Tracker():
                 peers = bdecode(response_data)
                 return peers
             except (TypeError, ValueError):
-                print(f'cannot decode response from {self.url}')
-                print(f'response: {response_data}')
+                print(f'TRACKER: cannot decode response from {self.url}')
+                print(f'TRACKER: response: {response_data}')
                 self.tries += 1
                 if self.tries == MAX_RETRY:
-                    print(f'cannot connect to tracker {self.url}!')
+                    print(f'TRACKER: cannot connect to tracker {self.url}!')
                     return
                 else:
-                    print(f'reconnecting... from tracker {self.url} using compact mode')
+                    print(f'TRACKER: reconnecting... from tracker {self.url} using compact mode')
                     self.compact = 1
                     await asyncio.sleep(2)
                     await self.requestPeers()
@@ -105,10 +105,10 @@ class Tracker():
                 
                 self.tries += 1
                 if self.tries == MAX_RETRY:
-                    print(f'cannot connect to tracker {self.url}!')
+                    print(f'TRACKER: cannot connect to tracker {self.url}!')
                     return
                 else:
-                    print(f'reconnecting... from tracker {self.url} using compact mode')
+                    print(f'TRACKER: reconnecting... from tracker {self.url} using compact mode')
                     self.compact = 1
                     await asyncio.sleep(2)
                     await self.requestPeers()
@@ -138,10 +138,10 @@ async def main(torrent):
     trackman = TrackerManager(torrent)
     dump(trackman)
     await trackman.requestPeers()
-    print('TASKS COMPLETED!')
-    print('peers')
+    print('TRACKER: TASKS COMPLETED!')
+    print('TRACKER: peers')
     print(pformat(trackman.getPeers()))
-    print('peers compact')
+    print('TRACKER: peers compact')
     print(pformat(trackman.getPeersOnly()))
 
 if __name__ == "__main__":
