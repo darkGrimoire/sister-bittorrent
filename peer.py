@@ -1,8 +1,10 @@
 import time
+import struct
 import asyncio
 from bitstring import BitArray
 from typing import List, Dict
 import messages
+from block import BLOCK_SIZE
 
 MAX_RETRY = 3
 INFINITE = float('inf')
@@ -14,6 +16,15 @@ class PeerManager():
         self.peer_id = peer_id
 
     async def requestPiece(self):
+        pass
+
+    def addReadyPeer(self, peer: Peer):
+        pass
+    def addRequestPeer(self, request: messages.Request):
+        pass
+    def addPiece(self, piece: messages.Piece):
+        pass
+    def removeRequest(self, request: messages.Cancel):
         pass
     
 class Peer():
@@ -34,6 +45,8 @@ class Peer():
         self.timeout = 0
         self.retry = 0
         self.bitfield = BitArray(peer_manager.getNumPieces())
+        self.writer: asyncio.StreamWriter = None
+        self.reader: asyncio.StreamReader = None
 
     def isHealthy(self) -> bool:
         return self.last_seen >= self.timeout
@@ -43,18 +56,18 @@ class Peer():
         self.last_seen = time.time()
         self.peer_manager.getBitfield()
 
-    def handleKeepAlive(self):
+    def handleKeepAlive(self, _):
         self.last_seen = time.time()
 
-    def handleInterested(self):
+    def handleInterested(self, _):
         print(f'PEER: {self.peer_id} handling Interested...')
         self.state['peer_interested'] = 1
 
-    def handleNotInterested(self):
+    def handleNotInterested(self, _):
         print(f'PEER: {self.peer_id} handling Not Interested...')
         self.state['peer_interested'] = 0
     
-    def handleChoke(self):
+    def handleChoke(self, _):
         print(f'PEER: {self.peer_id} handling Choke...')
         self.state['peer_choking'] = 1
         self.timeout = self.last_seen + 20
@@ -84,35 +97,78 @@ class Peer():
         print(f'PEER: {self.peer_id} handling Cancel...')
         self.peer_manager.removeRequest(self, cancel)
 
-    async def communicate(self):
+    def handlePort(self, port: messages.Port):
+        pass
+
+    async def connect(self):
         try:
-            reader, writer = await asyncio.wait_for(
+            self.reader, self.writer = await asyncio.wait_for(
                 asyncio.open_connection(self.ip, self.port),
                 timeout=10
             )
         except:
             print(f'PEER: {self.peer_id} Cannot create connection')
             self.timeout = INFINITE
-            return
+    
+    async def readHandshake(self):
+        resp = await self.reader.read(68)
+        try:
+            handshake_msg = messages.Handshake.readMessage(resp)
+            self.handshaked = True
+        except:
+            print(f'PEER: {self.ip} does not receive handshake msg first!')
+            self.timeout = INFINITE
 
-        while not self.handshaked:
-            writer.write(messages.Handshake(self.peer_id, self.info_hash).writeMessage())
-            await writer.drain()
-            handshake = await reader.read(49 + messages.HANDSHAKE_PSTRLEN)
-            try:
-                read_handshake = messages.Handshake.readMessage(handshake)
-                self.handshaked = True
-                self.last_seen = time.time()
-            except:
-                print(f'PEER: {self.peer_id} First message is not handshake!')
-                self.retry += 1
-                if self.retry >= MAX_RETRY:
-                    self.timeout = INFINITE
+    async def sendMessage(self, message: bytes):
+        if self.isHealthy():
+            self.writer.write(message)
+            await self.writer.drain()
+            self.last_seen = time.time()
+    
+    async def readMessage(self):
+        if not self.handshaked:
+            self.readHandshake()
+        else:
+            msg_handler = {
+                messages.Choke: handleChoke,
+                messages.UnChoke: handleUnchoke,
+                messages.Interested: handleInterested,
+                messages.NotInterested: handleNotInterested,
+                messages.Have: handleHave,
+                messages.BitField: handleBitfield,
+                messages.Request: handleRequest,
+                messages.Piece: handlePiece,
+                messages.Cancel: handleCancel,
+                messages.Port: handlePort
+            }
+            buffer = b''
+            while True:
+                resp = await self.reader.read(BLOCK_SIZE)
+                buffer += resp
+                if not buffer and not resp:
                     return
-                await asyncio.sleep(1)
-                continue
-        
-        writer.write(messages.Interested().writeMessage())
-        await writer.drain()
-        self.state['am_interested'] = 1
-        
+                while True:
+                    if len(buffer) < 4:
+                        break
+                    msg_len = struct.unpack('>I', buffer[:4][0])
+                    total_length = msg_len + 4
+                    if len(buffer) < total_length:
+                        break
+                    payload = buffer[:total_length]
+                    buffer = buffer[total_length:]
+                    if msg_len == 0:
+                        self.handleKeepAlive()
+                        continue
+                    try:
+                        msg = messages.Message.determineMessage(payload)
+                        if msg:
+                            msg_handler[type(msg)](msg)
+                    except messages.WrongMessageException:
+                        print(f'PEER: {self.ip} error determining message')
+                        continue
+
+
+                    
+                
+
+

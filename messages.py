@@ -72,7 +72,7 @@ class KeepAlive(Message):
     total_bytes = 4
 
     def writeMessage(self) -> bytes:
-        return struct.pack('>I', msg_len)
+        return struct.pack('>I', self.msg_len)
     
     @classmethod
     def readMessage(cls, payload):
@@ -88,7 +88,7 @@ class Choke(Message):
     total_bytes = 5
 
     def writeMessage(self) -> bytes:
-        return struct.pack('>IB', msg_len, msg_id)
+        return struct.pack('>IB', self.msg_len, self.msg_id)
     
     @classmethod
     def readMessage(cls, payload):
@@ -104,7 +104,7 @@ class UnChoke(Message):
     total_bytes = 5
 
     def writeMessage(self) -> bytes:
-        return struct.pack('>IB', msg_len, msg_id)
+        return struct.pack('>IB', self.msg_len, self.msg_id)
     
     @classmethod
     def readMessage(cls, payload):

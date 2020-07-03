@@ -11,11 +11,11 @@
   - [x] Decode response messages
 - [ ] ***Connect to peers**
   - [x] Make Block and Piece
-  - [ ] Make peer states and messages
+  - [x] Make peer states and messages
   - [ ] Make a connection
+- [ ] Make Peer Manager
 - [ ] Make Pieces Manager
 - [ ] Write data to disk
-- [ ] Make Peer Manager
 - [ ] Seed data
 - [ ] Bonus: Making some GUI
 - [ ] Bonus: implements rarest-piece-first selection strategy
