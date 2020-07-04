@@ -46,8 +46,8 @@ class Handshake(Message):
     def __init__(self, peer_id, info_hash: bytes):
         if isinstance(peer_id, str):
             peer_id = peer_id.encode()
-        self.peer_id = peer_id
-        self.info_hash = info_hash
+        self.peer_id: bytes = peer_id
+        self.info_hash: bytes = info_hash
     
     def writeMessage(self) -> bytes:
         return struct.pack(f'>B{HANDSHAKE_PSTRLEN}s8s20s20s',
@@ -92,7 +92,7 @@ class Choke(Message):
     
     @classmethod
     def readMessage(cls, payload):
-        payload_len, payload_id = struct.unpack('>IB', payload[:cls.msg_len])
+        payload_len, payload_id = struct.unpack('>IB', payload[:cls.total_bytes])
         if (payload_len != cls.msg_len or payload_id != cls.msg_id):
             raise WrongMessageException("Not a Choke message!")
         return cls()
@@ -108,7 +108,7 @@ class UnChoke(Message):
     
     @classmethod
     def readMessage(cls, payload):
-        payload_len, payload_id = struct.unpack('>IB', payload[:cls.msg_len])
+        payload_len, payload_id = struct.unpack('>IB', payload[:cls.total_bytes])
         if (payload_len != cls.msg_len or payload_id != cls.msg_id):
             raise WrongMessageException("Not an UnChoke message!")
         return cls()
@@ -168,12 +168,12 @@ class BitField(Message):
     msg_id = 5
 
     def __init__(self, bitfield):
-        self.bitfield = bitfield.tobytes()
-        self.msg_len = 1 + len(self.bitfield)
+        self.bitfield = bitfield
+        self.msg_len = 1 + len(self.bitfield.tobytes())
         self.total_bytes = 4 + self.msg_len
 
     def writeMessage(self) -> bytes:
-        return struct.pack(f'>IB{len(self.bitfield)}s', self.msg_len, self.msg_id, self.bitfield)
+        return struct.pack(f'>IB{len(self.bitfield.tobytes())}s', self.msg_len, self.msg_id, self.bitfield.tobytes())
     
     @classmethod
     def readMessage(cls, payload):
@@ -195,6 +195,9 @@ class Request(Message):
         self.begin = begin
         self.length = length
 
+    def __eq__(self, rhs):
+        return isinstance(rhs, Request) and self.idx == rhs.idx and self.begin == rhs.begin and self.length == rhs.length
+
     def writeMessage(self) -> bytes:
         return struct.pack('>IBIII', self.msg_len, self.msg_id, self.idx, self.begin, self.length)
     
@@ -214,7 +217,7 @@ class Piece(Message):
         self.block = block
         self.block_length = block_length
         self.msg_len = 9 + block_length
-        self.total_bytes = 4 + msg_len
+        self.total_bytes = 4 + self.msg_len
 
     def writeMessage(self) -> bytes:
         return struct.pack(f'>IBII{self.block_length}s', self.msg_len, self.msg_id, self.idx, self.begin, self.block)
@@ -222,8 +225,8 @@ class Piece(Message):
     @classmethod
     def readMessage(cls, payload):
         payload_block_length = len(payload) - 13
-        payload_len, payload_id, payload_idx, payload_begin, payload_block = struct.unpack(f'>IBII{payload_block_length}s', payload[:13 + block_length])
-        if (payload_len != cls.msg_len or payload_id != cls.msg_id):
+        payload_len, payload_id, payload_idx, payload_begin, payload_block = struct.unpack(f'>IBII{payload_block_length}s', payload[:13 + payload_block_length])
+        if payload_id != cls.msg_id:
             raise WrongMessageException("Not a Piece message!")
         return cls(payload_idx, payload_begin, payload_block, payload_block_length)
 

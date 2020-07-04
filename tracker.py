@@ -117,7 +117,7 @@ class Tracker():
         msg = {
             'info_hash': self.info_hash,
             'peer_id': PEER_ID,
-            'port': 6889,
+            'port': 52786,
             'uploaded': 0,
             'downloaded': 0,
             'left': self.size,

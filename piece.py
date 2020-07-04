@@ -12,6 +12,7 @@ class PieceManager():
         self.initialize_pieces()
         self.files = torrent.getFiles()
         self.completed_pieces = 0
+        self.completed_size = 0
     
     def initialize_pieces(self):
         num_of_pieces = self.torrent.getNumPieces()
@@ -19,6 +20,33 @@ class PieceManager():
         total_size = self.torrent.getSize()
         last_piece_size = total_size % self.torrent.getPieceSize() if total_size % self.torrent.getPieceSize() != 0 else self.torrent.getPieceSize()
         self.pieces.append(Piece(num_of_pieces-1, self.torrent.getHashPiece(num_of_pieces-1), last_piece_size))
+
+    def getPiece(self, piece_idx):
+        return self.pieces[piece_idx]
+
+    def getEmptyBlockFromPiece(self, piece_idx):
+        self.pieces[piece_idx].updateBlockStatus()
+        return self.getPiece(piece_idx).getEmptyBlock()
+    
+    def getBlock(self, idx, begin, block_length):
+        if not self.getPiece(idx).complete:
+            return None
+        return self.getPiece(idx).getBlock(begin, block_length)
+
+    def receiveBlock(self, idx, begin, block, block_length):
+        if self.pieces[idx].complete:
+            return
+        res = self.pieces[idx].setBlock(begin, block, block_length)
+        if res:
+            self.completed_size += block_length
+            print(f'PIECE_MAN: received piece_idx {idx}! completed size now {self.completed_size}')
+        if self.pieces[idx].isComplete():
+            self.completed_pieces += 1
+            self.bitfield[idx] = True
+            print(f'PIECE_MAN: piece {idx} completed!')
+    
+    def isComplete(self):
+        return self.completed_pieces == self.torrent.getNumPieces()
 
 class Piece():
     def __init__(self, piece_index: int, piece_hash: bytes, piece_size: int):
@@ -60,6 +88,8 @@ class Piece():
         if self.blocks[block_index].state != State.COMPLETE and self.blocks[block_index].size == block_length:
             self.blocks[block_index].data += block_data
             self.blocks[block_index].state = State.COMPLETE
+            return True
+        return False
 
     def updateBlockStatus(self):
         for block in self.blocks:

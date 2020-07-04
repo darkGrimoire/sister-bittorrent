@@ -9,12 +9,15 @@
 - [x] Make tracker request
   - [x] Create request messages
   - [x] Decode response messages
-- [ ] ***Connect to peers**
+- [x] Connect to peers
   - [x] Make Block and Piece
   - [x] Make peer states and messages
-  - [ ] Make a connection
+  - [x] Make a connection
+- [x] Make Pieces Manager
 - [ ] Make Peer Manager
-- [ ] Make Pieces Manager
+  - [ ] Make download and upload loops
+  - [ ] Make message listeners
+  - [ ] Can receive pieces in memory
 - [ ] Write data to disk
 - [ ] Seed data
 - [ ] Bonus: Making some GUI
