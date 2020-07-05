@@ -1,4 +1,5 @@
 import math
+import os
 import hashlib
 from datetime import datetime
 from typing import List, Dict, Optional
@@ -10,9 +11,9 @@ class Torrent():
         self.torrent_file = torrent_file
         self.metainfo = self.decode_file()
         self.file_mode = self.isSingleFile()
-        self.files = self.getFiles()
         bencoded_info = bencode(self.metainfo['info'])
         self.infoHash = hashlib.sha1(bencoded_info).digest()
+        self.initialize_files()
 
     # GETTER
     def getAnnounce(self) -> str:
@@ -34,10 +35,6 @@ class Torrent():
             f'Pieces: {self.getNumPieces()}'
         )
         return msg
-    def getRoot(self) -> str:
-        return self.metainfo['info']['name']
-    def getFiles(self) -> List:
-        return self.files
     def getNumPieces(self) -> int:
         total_length = self.metainfo['info']['length'] if self.file_mode else sum(afile["length"] for afile in self.metainfo["info"]["files"])
         piece_size = self.metainfo['info']['piece length']
@@ -57,15 +54,22 @@ class Torrent():
             return bdecode(f)
     def isSingleFile(self) -> bool:
         return 'files' not in self.metainfo['info']
-    def getFiles(self) -> List:
-        files = []
+    def initialize_files(self):
+        self.raw_files = []
         root = self.metainfo['info']['name']
         if self.file_mode:
-            files.append([root])
+            root_name = os.path.splitext(self.torrent_file)[0]
+            if not os.path.exists(root_name):
+                os.mkdir(root_name)
+            self.raw_files.append({'path': os.path.join(root_name, root), 'length': self.metainfo['info']['length']})
         else:
-            for file_info in self.metainfo['info']['files']:
-                files.append(file_info['path'])
-        return files
+            if not os.path.exists(root):
+                os.mkdir(root)
+            for files in self.metainfo['info']['files']:
+                file_path = os.path.join(root, *files['path'])
+                if not os.path.exists(os.path.dirname(file_path)):
+                    os.makedirs(os.path.dirname(file_path))
+                self.raw_files.append({'path': file_path, 'length': files['length']})
 
 if __name__ == "__main__":
     tor = Torrent('sintel.torrent')

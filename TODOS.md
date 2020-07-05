@@ -14,11 +14,13 @@
   - [x] Make peer states and messages
   - [x] Make a connection
 - [x] Make Pieces Manager
-- [ ] Make Peer Manager
-  - [ ] Make download and upload loops
-  - [ ] Make message listeners
-  - [ ] Can receive pieces in memory
+- [x] Make Peer Manager
+  - [x] Make download and upload loops
+  - [x] Make message listeners
+  - [x] Can receive pieces in memory
 - [ ] Write data to disk
+  - [x] Design FileSaver Scheme
+  - [ ] Write completed piece
 - [ ] Seed data
 - [ ] Bonus: Making some GUI
 - [ ] Bonus: implements rarest-piece-first selection strategy

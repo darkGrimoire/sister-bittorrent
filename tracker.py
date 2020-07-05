@@ -27,6 +27,7 @@ class TrackerManager():
         self.tracker_responses = []
         
     async def requestPeers(self):
+        self.tracker_responses = []
         for res in asyncio.as_completed(self.trackers_tasks):
             tracker_resp = await res
             if tracker_resp:
@@ -57,6 +58,19 @@ class TrackerManager():
                     peers.append(peer_item)
         return peers
 
+    async def sendCompleted(self):
+        for tracker in self.trackers:
+            tracker.event = 'completed'
+        self.tracker_responses = []
+        tracker_tasks = [tracker.getPeers() for tracker in self.trackers]
+        for res in asyncio.as_completed(tracker_tasks):
+            tracker_resp = await res
+            if tracker_resp:
+                self.tracker_responses.append(tracker_resp)
+            # print(f'TRACKER: tracker_response now: {self.tracker_responses}')
+        else:
+            print(f'TRACKER_MAN: send complete done!')
+    
 class Tracker():
     def __init__(self, tracker_url: str, info_hash, size: int):
         self.url = tracker_url
@@ -73,11 +87,12 @@ class Tracker():
 
     async def getPeers(self) -> Dict:
         tracker_response = await self.requestPeers()
-        print(f'---TRACKER RESPONSE--- {self.url}:{self.info_hash}:{self.size}')
-        print(tracker_response)
+        # print(f'---TRACKER RESPONSE--- {self.url}:{self.info_hash}:{self.size}')
+        # print(tracker_response)
         if tracker_response:
             if isinstance(tracker_response['peers'], bytes):
                 tracker_response = self.unpackPeers(tracker_response)
+        self.event = ''
         return tracker_response
     
     async def requestPeers(self) -> Optional[Dict]:
@@ -88,27 +103,27 @@ class Tracker():
                 peers = bdecode(response_data)
                 return peers
             except (TypeError, ValueError):
-                print(f'TRACKER: cannot decode response from {self.url}')
-                print(f'TRACKER: response: {response_data}')
+                # print(f'TRACKER: cannot decode response from {self.url}')
+                # print(f'TRACKER: response: {response_data}')
                 self.tries += 1
-                if self.tries == MAX_RETRY:
-                    print(f'TRACKER: cannot connect to tracker {self.url}!')
+                if self.tries >= MAX_RETRY:
+                    # print(f'TRACKER: cannot connect to tracker {self.url}!')
                     return
                 else:
-                    print(f'TRACKER: reconnecting... from tracker {self.url} using compact mode')
+                    # print(f'TRACKER: reconnecting... from tracker {self.url} using compact mode')
                     self.compact = 1
                     await asyncio.sleep(2)
                     await self.requestPeers()
             except Exception as e:
-                print(e)
-                print(type(e))
+                # print(e)
+                # print(type(e))
                 
                 self.tries += 1
                 if self.tries == MAX_RETRY:
-                    print(f'TRACKER: cannot connect to tracker {self.url}!')
+                    # print(f'TRACKER: cannot connect to tracker {self.url}!')
                     return
                 else:
-                    print(f'TRACKER: reconnecting... from tracker {self.url} using compact mode')
+                    # print(f'TRACKER: reconnecting... from tracker {self.url} using compact mode')
                     self.compact = 1
                     await asyncio.sleep(2)
                     await self.requestPeers()
