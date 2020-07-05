@@ -9,6 +9,11 @@ Source of inspiration and learning:
 
 Dalam rangka seleksi asisten SISTER 2020
 
+## cara setup:
+```
+pip install -r requirements.txt
+```
+
 ### cara jalanin:
 ```
 python main.py
